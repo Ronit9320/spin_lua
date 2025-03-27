@@ -1,0 +1,9 @@
+{
+    "diagnostics.globals": [
+        "love",
+        "x",
+        "dt",
+        "speed",
+        "y"
+    ]
+}
