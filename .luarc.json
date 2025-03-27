@@ -4,6 +4,8 @@
         "x",
         "dt",
         "speed",
-        "y"
+        "y",
+        "mousePosX",
+        "mousePosY"
     ]
 }

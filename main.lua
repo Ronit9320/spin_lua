@@ -8,6 +8,8 @@ function love.load()
   data.x = love.graphics.getWidth() / 2 - data.width / 2
   data.y = love.graphics.getHeight() / 2 - data.height / 2
   data.rotation = math.rad(0)
+  data.scaleX = 1
+  data.scaleY = 1
   data.rotationSpeed = 100
 end
 
@@ -17,6 +19,9 @@ function love.update(dt)
   elseif love.mouse.isDown(2) then
     data.rotation = data.rotation - data.rotationSpeed * dt
   end
+
+  mousePosX, mousePosY = love.mouse.getPosition()
+  print(mousePosX, mousePosY)
 end
 
 function love.draw()
@@ -24,9 +29,11 @@ function love.draw()
 
   love.graphics.draw(
     data.sprite,
-    data.x + data.width / 2,
-    data.y + data.height / 2,
+    mousePosX + data.width / 2,
+    mousePosY + data.height / 2,
     data.rotation,
+    data.scaleX,
+    data.scaleY,
     data.width / 2,
     data.height / 2
   )
