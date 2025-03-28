@@ -2,11 +2,8 @@ local data = {}
 
 function love.load()
   data.sprite = love.graphics.newImage("assets/weapon.png")
-
   data.width = data.sprite:getWidth()
   data.height = data.sprite:getHeight()
-  data.x = love.graphics.getWidth() / 2 - data.width / 2
-  data.y = love.graphics.getHeight() / 2 - data.height / 2
   data.rotation = math.rad(0)
   data.scaleX = 1
   data.scaleY = 1
@@ -21,7 +18,7 @@ function love.update(dt)
   end
 
   mousePosX, mousePosY = love.mouse.getPosition()
-  print(mousePosX, mousePosY)
+  -- print(mousePosX, mousePosY)
 end
 
 function love.draw()
@@ -29,8 +26,8 @@ function love.draw()
 
   love.graphics.draw(
     data.sprite,
-    mousePosX + data.width / 2,
-    mousePosY + data.height / 2,
+    mousePosX,
+    mousePosY,
     data.rotation,
     data.scaleX,
     data.scaleY,
